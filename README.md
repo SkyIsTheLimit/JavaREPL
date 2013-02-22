@@ -1,11 +1,10 @@
 JavaREPL
 ========
 
-A Java Read Eval Print Loop (REPL)
-==================================
+<b>A Java Read Eval Print Loop (REPL)</b>
 
 *What is a Read Eval Print Loop?*
-================================
+
 A Read Eval Print Loop (REPL) is a tool used to try out a new language, debug existing code, or 
 just play around with the language runtime. As the name suggests, the tool follows the following
 workflow:
