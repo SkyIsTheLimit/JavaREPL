@@ -21,4 +21,4 @@ the REPL returns the previously created variable age which contains the value 87
 
 These, among many other features make a REPL a very useful tool. Most scripting langauges already have
 their own version of REPL. For instance, Python, Ruby, SML, Erlang, etc. all have a REPL devleoped 
-already. However, Jave doesn't seem to have one.
+already. However, Java doesn't seem to have one.
