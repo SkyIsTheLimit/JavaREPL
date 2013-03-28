@@ -1,9 +1,9 @@
 package com.github.skyisthelimit.jrepl.api.code;
 
-import com.github.skyisthelimit.jrepl.api.compile.ICompilationResult;
-import com.github.skyisthelimit.jrepl.api.compile.ICompiler;
-import com.github.skyisthelimit.jrepl.api.execute.IExecutionResult;
-import com.github.skyisthelimit.jrepl.api.execute.IExecutor;
+import com.github.skyisthelimit.jrepl.api.code.compile.ICompilationResult;
+import com.github.skyisthelimit.jrepl.api.code.compile.ICompiler;
+import com.github.skyisthelimit.jrepl.api.code.execute.IExecutionResult;
+import com.github.skyisthelimit.jrepl.api.code.execute.IExecutor;
 
 /**
  * Represents an entity which can be executed. This would be the source code

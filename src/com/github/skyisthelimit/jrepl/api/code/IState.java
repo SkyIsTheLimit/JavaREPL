@@ -1,5 +1,9 @@
 package com.github.skyisthelimit.jrepl.api.code;
 
+import com.github.skyisthelimit.jrepl.api.code.compile.ICompilationResult;
+import com.github.skyisthelimit.jrepl.api.code.execute.IExecutionResult;
+import com.github.skyisthelimit.jrepl.api.code.models.IClassModel;
+
 /**
  * The global state of the REPL. Maintains the loaded Objects and Classes. The
  * REPL provides access to all the built in classes of the java library. Along
@@ -16,15 +20,13 @@ package com.github.skyisthelimit.jrepl.api.code;
  * 
  */
 public interface IState {
-	void addClass(Class<?> clazz);
+	IClassModel[] getClasses();
 
-	Class<?>[] getClasses();
+	Object[] getObject();
 
-	Class<?> removeClass(Class<?> clazz);
+	IResult[] getHistory();
 
-	void addObject(Object object);
+	ICompilationResult[] getCompilationHistory();
 
-	Object[] getObjects();
-
-	Object removeObject(Object object);
+	IExecutionResult[] getExecutionHistory();
 }

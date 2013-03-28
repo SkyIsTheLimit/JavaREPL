@@ -1,4 +1,4 @@
-package com.github.skyisthelimit.jrepl.api.execute;
+package com.github.skyisthelimit.jrepl.api.code.execute;
 
 import com.github.skyisthelimit.jrepl.api.code.IResult;
 
@@ -10,4 +10,5 @@ import com.github.skyisthelimit.jrepl.api.code.IResult;
  * 
  */
 public interface IExecutionResult extends IResult {
+	String getExecutedCode();
 }

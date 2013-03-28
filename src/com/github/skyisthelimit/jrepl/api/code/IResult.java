@@ -9,7 +9,9 @@ package com.github.skyisthelimit.jrepl.api.code;
  * 
  */
 public interface IResult {
-	String getMessage();
+	String[] getMessages();
 
 	Exception[] getExceptions();
+
+	boolean isSuccess();
 }

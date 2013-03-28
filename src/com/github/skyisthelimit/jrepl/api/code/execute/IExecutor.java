@@ -1,4 +1,4 @@
-package com.github.skyisthelimit.jrepl.api.execute;
+package com.github.skyisthelimit.jrepl.api.code.execute;
 
 import com.github.skyisthelimit.jrepl.api.code.IExecutable;
 
