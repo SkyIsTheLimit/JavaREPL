@@ -1,5 +1,6 @@
 package com.github.skyisthelimit.jrepl.code;
 
+import com.github.skyisthelimit.jrepl.api.code.ICodeElement;
 import com.github.skyisthelimit.jrepl.api.code.models.IBlockModel;
 import com.github.skyisthelimit.jrepl.api.code.models.IMethodModel;
 import com.github.skyisthelimit.jrepl.api.code.models.IStatementModel;
@@ -44,6 +45,12 @@ public class Method implements IMethodModel {
 
 	@Override
 	public IStatementModel[] getStatements() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ICodeElement[] getCodeElements() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -22,4 +22,6 @@ public interface IBlockModel extends ICodeElement {
 	IBlockModel[] getBlocks();
 
 	IClassModel[] getClasses();
+
+	ICodeElement[] getCodeElements();
 }

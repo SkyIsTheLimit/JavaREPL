@@ -1,4 +1,4 @@
-package com.github.skyisthelimit.jrepl.code;
+package com.github.skyisthelimit.jrepl.code.compile;
 
 import java.io.IOException;
 import java.net.URI;
