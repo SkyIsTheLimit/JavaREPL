@@ -1,59 +1,59 @@
 package com.github.skyisthelimit.jrepl.code;
 
-import com.github.skyisthelimit.jrepl.api.code.ICodeElement;
+import java.util.List;
+
 import com.github.skyisthelimit.jrepl.api.code.models.IBlockModel;
 import com.github.skyisthelimit.jrepl.api.code.models.IMethodModel;
 import com.github.skyisthelimit.jrepl.api.code.models.IStatementModel;
 import java.lang.Class;
 
-public class Method implements IMethodModel {
+public class Method extends AbstractCodeElement implements IMethodModel {
+	private String accessSpecifier;
+	private Class<?> returnType;
+	private String methodName;
+	private List<Class<?>> arguments;
+
+	private List<IBlockModel> blocks;
+	private List<IStatementModel> statements;
+
+	public Method(String accessSpecifier, Class<?> returnType, String methodName) {
+		this.accessSpecifier = accessSpecifier;
+		this.returnType = returnType;
+		this.methodName = methodName;
+	}
 
 	@Override
 	public String getCode() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String getAccessSpecifier() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String getMethodName() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Class<?> getReturnType() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Class<?>[] getArgumentTypes() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public IBlockModel[] getBlocks() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public IStatementModel[] getStatements() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public ICodeElement[] getCodeElements() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

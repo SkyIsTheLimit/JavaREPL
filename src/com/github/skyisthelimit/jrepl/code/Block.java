@@ -8,14 +8,12 @@ import com.github.skyisthelimit.jrepl.api.code.models.IBlockModel;
 import com.github.skyisthelimit.jrepl.api.code.models.IClassModel;
 import com.github.skyisthelimit.jrepl.api.code.models.IStatementModel;
 
-public class Block implements IBlockModel {
-	List<ICodeElement> codeElements;
-	List<IStatementModel> statements;
-	List<IBlockModel> blocks;
-	List<IClassModel> classes;
+public class Block extends AbstractCodeElement implements IBlockModel {
+	private List<IStatementModel> statements;
+	private List<IBlockModel> blocks;
+	private List<IClassModel> classes;
 
 	public Block() {
-		this.codeElements = new ArrayList<>();
 		this.statements = new ArrayList<>();
 		this.blocks = new ArrayList<>();
 		this.classes = new ArrayList<>();
@@ -52,10 +50,5 @@ public class Block implements IBlockModel {
 		 */
 
 		return code.toString();
-	}
-
-	@Override
-	public ICodeElement[] getCodeElements() {
-		return codeElements.toArray(new ICodeElement[] {});
 	}
 }

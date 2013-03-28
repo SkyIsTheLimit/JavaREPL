@@ -1,6 +1,9 @@
 package com.github.skyisthelimit.jrepl.code;
 
-import com.github.skyisthelimit.jrepl.api.code.ICodeElement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.github.skyisthelimit.jrepl.api.code.IAccessible;
 import com.github.skyisthelimit.jrepl.api.code.compile.ICompilable;
 import com.github.skyisthelimit.jrepl.api.code.compile.ICompilationResult;
 import com.github.skyisthelimit.jrepl.api.code.execute.IExecutable;
@@ -8,96 +11,102 @@ import com.github.skyisthelimit.jrepl.api.code.models.IBlockModel;
 import com.github.skyisthelimit.jrepl.api.code.models.IClassModel;
 import com.github.skyisthelimit.jrepl.api.code.models.IMethodModel;
 
-public class Class implements IClassModel {
+public class Class extends AbstractCodeElement implements IClassModel {
+	private String packageName;
+	private String accessSpecifier;
+	private String className;
 
-	@Override
-	public String getCode() {
-		// TODO Auto-generated method stub
-		return null;
+	private boolean isCompiled;
+
+	private List<IBlockModel> blocks;
+	private List<IMethodModel> methods;
+	private List<IClassModel> classes;
+
+	public Class(String className) {
+		this("", IAccessible.PUBLIC, className);
+	}
+
+	public Class(String packageName, String className) {
+		this(packageName, IAccessible.PUBLIC, className);
+	}
+
+	public Class(String packageName, String accessSpecifier, String className) {
+		super();
+
+		this.packageName = packageName;
+		this.accessSpecifier = accessSpecifier;
+		this.className = className;
+
+		this.isCompiled = false;
+
+		this.blocks = new ArrayList<>();
+		this.methods = new ArrayList<>();
+		this.classes = new ArrayList<>();
 	}
 
 	@Override
 	public String getAccessSpecifier() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.accessSpecifier;
 	}
 
 	@Override
 	public ICompilable compile() {
-		// TODO Auto-generated method stub
+		this.isCompiled = true;
 		return null;
 	}
 
 	@Override
 	public boolean isCompiled() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.isCompiled;
 	}
 
 	@Override
 	public ICompilationResult getCompilationResult() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String getCompilableCode() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.getCode();
 	}
 
 	@Override
 	public String getQualifiedName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.packageName + "." + this.className;
 	}
 
 	@Override
 	public String[] getQualifiedNames() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public IExecutable execute() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public String getPackageName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.packageName;
 	}
 
 	@Override
 	public String getClassName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.className;
 	}
 
 	@Override
 	public IBlockModel[] getBlocks() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.blocks.toArray(new IBlockModel[] {});
 	}
 
 	@Override
 	public IMethodModel[] getMethods() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.methods.toArray(new IMethodModel[] {});
 	}
 
 	@Override
 	public IClassModel[] getClasses() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.classes.toArray(new IClassModel[] {});
 	}
-
-	@Override
-	public ICodeElement[] getCodeElements() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

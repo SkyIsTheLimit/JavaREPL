@@ -19,4 +19,10 @@ import com.github.skyisthelimit.jrepl.api.code.models.IStatementModel;
  */
 public interface ICodeElement {
 	String getCode();
+
+	ICodeElement[] getCodeElements();
+
+	boolean addCodeElement(ICodeElement element);
+
+	ICodeElement removeCodeElement(ICodeElement element);
 }

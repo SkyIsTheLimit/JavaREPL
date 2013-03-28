@@ -13,6 +13,4 @@ public interface IMethodModel extends ICodeElement, IAccessible {
 	IBlockModel[] getBlocks();
 
 	IStatementModel[] getStatements();
-	
-	ICodeElement[] getCodeElements();
 }

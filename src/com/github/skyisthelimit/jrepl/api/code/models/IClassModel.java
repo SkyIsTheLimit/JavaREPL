@@ -16,6 +16,4 @@ public interface IClassModel extends ICodeElement, IAccessible, ICompilable,
 	IMethodModel[] getMethods();
 
 	IClassModel[] getClasses();
-
-	ICodeElement[] getCodeElements();
 }

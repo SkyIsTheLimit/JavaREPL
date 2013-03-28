@@ -1,8 +1,9 @@
 package com.github.skyisthelimit.jrepl.code;
 
+import com.github.skyisthelimit.jrepl.api.code.ICodeElement;
 import com.github.skyisthelimit.jrepl.api.code.models.IStatementModel;
 
-public class Statement implements IStatementModel {
+public class Statement extends AbstractCodeElement implements IStatementModel {
 	private String statementString;
 
 	public Statement(String statementString) {
@@ -27,4 +28,9 @@ public class Statement implements IStatementModel {
 		return this.getStatement();
 	}
 
+	@Override
+	public ICodeElement[] getCodeElements() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
