@@ -1,6 +1,5 @@
 package com.github.skyisthelimit.jrepl.api.code.execute;
 
-import com.github.skyisthelimit.jrepl.api.code.IExecutable;
 
 /**
  * Represents the run time.

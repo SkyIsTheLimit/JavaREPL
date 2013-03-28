@@ -2,8 +2,8 @@ package com.github.skyisthelimit.jrepl.api.code.models;
 
 import com.github.skyisthelimit.jrepl.api.code.IAccessible;
 import com.github.skyisthelimit.jrepl.api.code.ICodeElement;
-import com.github.skyisthelimit.jrepl.api.code.ICompilable;
-import com.github.skyisthelimit.jrepl.api.code.IExecutable;
+import com.github.skyisthelimit.jrepl.api.code.compile.ICompilable;
+import com.github.skyisthelimit.jrepl.api.code.execute.IExecutable;
 
 public interface IClassModel extends ICodeElement, IAccessible, ICompilable,
 		IExecutable {

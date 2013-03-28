@@ -1,6 +1,5 @@
 package com.github.skyisthelimit.jrepl.api.code.compile;
 
-import com.github.skyisthelimit.jrepl.api.code.ICompilable;
 
 /**
  * Represents the compiler. Has features to pass in parameters, etc. to the

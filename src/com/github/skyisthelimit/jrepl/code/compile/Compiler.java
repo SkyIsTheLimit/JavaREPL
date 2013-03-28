@@ -14,7 +14,7 @@ import javax.tools.SimpleJavaFileObject;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 
-import com.github.skyisthelimit.jrepl.api.code.ICompilable;
+import com.github.skyisthelimit.jrepl.api.code.compile.ICompilable;
 import com.github.skyisthelimit.jrepl.api.code.compile.ICompilationResult;
 import com.github.skyisthelimit.jrepl.api.code.compile.ICompiler;
 

@@ -4,6 +4,7 @@ import com.github.skyisthelimit.jrepl.api.code.ICodeElement;
 import com.github.skyisthelimit.jrepl.api.code.models.IBlockModel;
 import com.github.skyisthelimit.jrepl.api.code.models.IMethodModel;
 import com.github.skyisthelimit.jrepl.api.code.models.IStatementModel;
+import java.lang.Class;
 
 public class Method implements IMethodModel {
 
