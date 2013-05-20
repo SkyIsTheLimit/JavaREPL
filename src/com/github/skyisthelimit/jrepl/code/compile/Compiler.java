@@ -42,18 +42,17 @@ public class Compiler implements ICompiler {
 				compilable.getCompilableCode());
 
 		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-
 		StandardJavaFileManager fileManager = compiler.getStandardFileManager(
 				null, Locale.getDefault(), null);
 
-		ArrayList<JavaSourceCode> sourceCodeObjects = new ArrayList<>();
+		ArrayList<JavaSourceCode> sourceCodeObjects = new ArrayList<JavaSourceCode>();
 		sourceCodeObjects.add(code);
 
-		ArrayList<String> compilationOptions = new ArrayList<>();
+		ArrayList<String> compilationOptions = new ArrayList<String>();
 		compilationOptions.add("-d");
 		compilationOptions.add("bin");
 
-		DiagnosticCollector<? super JavaFileObject> diagnostics = new DiagnosticCollector<>();
+		DiagnosticCollector<? super JavaFileObject> diagnostics = new DiagnosticCollector<JavaFileObject>();
 
 		CompilationTask compilerTask = compiler.getTask(null, fileManager,
 				diagnostics, compilationOptions, null, sourceCodeObjects);
@@ -75,7 +74,34 @@ public class Compiler implements ICompiler {
 			e.printStackTrace();
 		}
 
-		return null;
+		compilable.compile();
+
+		final ICompilable temp = compilable;
+
+		ICompilationResult result = new ICompilationResult() {
+
+			@Override
+			public boolean isSuccess() {
+				return true;
+			}
+
+			@Override
+			public String[] getMessages() {
+				return new String[] { "Compiled successfully!" };
+			}
+
+			@Override
+			public Exception[] getExceptions() {
+				return new Exception[] {};
+			}
+
+			@Override
+			public String getCompiledCode() {
+				return temp.getCompilableCode();
+			}
+		};
+
+		return result;
 	}
 
 	@Override

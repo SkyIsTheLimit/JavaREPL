@@ -25,7 +25,7 @@ public class Statement extends AbstractCodeElement implements IStatementModel {
 
 	@Override
 	public String getCode() {
-		return this.getStatement();
+		return getStatement() + ";";
 	}
 
 	@Override

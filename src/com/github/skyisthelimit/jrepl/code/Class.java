@@ -39,9 +39,9 @@ public class Class extends AbstractCodeElement implements IClassModel {
 
 		this.isCompiled = false;
 
-		this.blocks = new ArrayList<>();
-		this.methods = new ArrayList<>();
-		this.classes = new ArrayList<>();
+		this.blocks = new ArrayList<IBlockModel>();
+		this.methods = new ArrayList<IMethodModel>();
+		this.classes = new ArrayList<IClassModel>();
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public class Class extends AbstractCodeElement implements IClassModel {
 	@Override
 	public ICompilable compile() {
 		this.isCompiled = true;
-		return null;
+		return this;
 	}
 
 	@Override
@@ -63,6 +63,16 @@ public class Class extends AbstractCodeElement implements IClassModel {
 	@Override
 	public ICompilationResult getCompilationResult() {
 		return null;
+	}
+
+	@Override
+	public String getCode() {
+		String code = super.getCode();
+
+		String signature = getAccessSpecifier() + " " + "class" + " "
+				+ getClassName();
+
+		return signature + " { " + code + " } ";
 	}
 
 	@Override
@@ -108,5 +118,10 @@ public class Class extends AbstractCodeElement implements IClassModel {
 	@Override
 	public IClassModel[] getClasses() {
 		return this.classes.toArray(new IClassModel[] {});
+	}
+
+	@Override
+	public String toString() {
+		return this.getCode();
 	}
 }
