@@ -1,4 +1,4 @@
-package com.skyisthelimit.jrepl.compiler;
+package com.skyisthelimit.jrepl.cr.reader;
 
 /**
  * A simple <code>CodeReader</code> implementation.
