@@ -13,7 +13,6 @@ import javax.tools.JavaFileObject;
 import javax.tools.StandardJavaFileManager;
 import javax.tools.ToolProvider;
 
-import com.skyisthelimit.jrepl.cr.clazz.Compilable;
 import com.skyisthelimit.jrepl.cr.clazz.JavaClass;
 import com.skyisthelimit.jrepl.cr.compiler.exception.CouldNotCreateCompilerException;
 
@@ -83,32 +82,16 @@ public class Compiler implements DiagnosticListener<JavaFileObject> {
 	}
 
 	/**
-	 * Compile a compilable object.
-	 * 
-	 * @param compilable
-	 * @return Returns true if compilation was successfull else false.
-	 */
-	public boolean compile(Compilable compilable) {
-		// Compile a <code>compilable</code> object.
-		// Get the code and compile it. No need to worry about execution here.
-		// System.out.println("Compiling: " + compilable.getCompilableCode());
-
-		// The callback on compilable being called so it can do any extra
-		// processing it wants.
-		compilable.compile();
-
-		// Ok, this is something to worry about :P
-		return compile((JavaClass) compilable);
-	}
-
-	/**
-	 * Helper method for the public compile method.
+	 * Compile a compilable object. Helper method for the public compile method.
 	 * 
 	 * @param clazz
 	 *            The java class to compile.
 	 * @return Returns true if compilation was successfull else false.
 	 */
-	private boolean compile(JavaClass clazz) {
+	public boolean compile(JavaClass clazz) {
+		// Get the code and compile it. No need to worry about execution here.
+
+		// Create the list of compilable objects.
 		List<JavaClass> compilableObjects = new ArrayList<JavaClass>();
 
 		// [TODO] Compile only the uncompiled ones.
@@ -120,6 +103,10 @@ public class Compiler implements DiagnosticListener<JavaFileObject> {
 
 		// Call the task
 		boolean status = task.call();
+
+		// The callback on compilable being called so it can do any extra
+		// processing it wants.
+		clazz.compile();
 
 		return status;
 	}
